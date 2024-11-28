@@ -1,0 +1,36 @@
+<?php
+
+// Create a define in order to access the main root project
+	if ( !defined( 'PROJECT_ROOT' ) ) {
+		
+		define( 'PROJECT_ROOT', __DIR__ );
+	}
+
+    $config_server = [
+		'db'       => [
+			'type' => 'mysql',
+			'host' => 'localhost',
+			'name' => 'faxing_db',
+			'user' => 'root',
+			'port' => 3306,
+			'pass' => ''
+		],
+		'paths'     => [
+			'files' => 'files'
+		],
+		'ami'  => [
+			'server'     => 'pbx-02-00.hyperionworks.com',
+			'port'       => '5038',
+			'username'   => 'faxtest',
+			'password'   => 'SkO43UnL07Y3giL8',
+			'Async'      => 'true',
+			'Channel'    => 'Local/sendfax@hyperionworks-fax',
+			'Context'    => 'hyperionworks-outbound-domestic',
+			'MaxRetries' => '10',
+			'Priority'   => '1',
+			'RetryTime'  => '10',
+			'WaitTime'   => '5',
+		],
+	];
+
+?>

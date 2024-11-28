@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Redirect requests to www/index.php for /api/1.0/*
+    RewriteRule ^api/([^/]+)/([^/]*)$ www/index.php?version=$1&endpoint=$2 [L,QSA]
+</IfModule>
